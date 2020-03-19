@@ -97,6 +97,7 @@ set_target()
 set_release_ver()
 {
   RELEASE_VER=$1
+  echo "RAMYA Iam in set_release_ver() RELEASE_VER= "$RELEASE_VER
 }
 
 set_symdir()
@@ -152,7 +153,6 @@ show_settings()
 make_clean()
 {
   rm -rf $APPLETV_INSTALL_IMG_DIR
-  #rm -rf $APPLETV_BASICEGL_ROOT
 }
 
 

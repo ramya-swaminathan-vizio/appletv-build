@@ -41,6 +41,7 @@ build_install_img()
 
   vs_img_header=$APPLETV_IMG_WORKDIR/img_header
   echo "RAMYA Iam in build_install_img vs_img_header= " $vs_img_header
+  echo "RAMYA Iam in build_install_img $img_ver = " $img_ver
   build_img_header $img_ver $img_type $vs_squashfs_file $vs_img_header
   mkdir -p `dirname $img`
   build_img_file $vs_img_header $vs_squashfs_file $img
@@ -56,7 +57,7 @@ build_dev_tarball()
 
   # create tarball
   cd $VS_COMPLETE_IMG_DIR || die 2 "Directory '$VS_COMPLETE_IMG_DIR' doesn't exist"
-  tar czf $dest_dir/conjure_dev.tgz *
+  tar czf $dest_dir/appletv_dev.tgz *
 }
 
 #-----------------------------------------------------------------------------
@@ -77,7 +78,7 @@ build_base_img()
     cp -R $APPLETV_BASICEGL_ROOT/$f .
   done
 
-  # adjust names and permissions for VS TV
+  # adjust names if needed and permissions for VS TV
   chmod -R 755 *
 
 }
@@ -93,6 +94,7 @@ build_squashfs()
 build_img_header()
 {
   app_ver=$1
+  echo "RAMYA Iam in build_img_header() app_ver "$app_ver
   app_product=$2
   squashfs_file=$3
   header_file=$4
