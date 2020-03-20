@@ -66,7 +66,8 @@ build_base_img()
   mkdir -p $VS_COMPLETE_IMG_DIR
   cd $VS_COMPLETE_IMG_DIR
 
-  # copy files and directories from appletv build
+  # copy files and directories from appletv build to dest dir,
+  # from that dest dir, all contents to be mounted in TV
 
   #for f in $APPLETV_FILES $APPLETV_PAK_DIRS
   for f in $APPLETV_PAK_DIRS
