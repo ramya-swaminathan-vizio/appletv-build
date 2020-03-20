@@ -200,9 +200,9 @@ fi
 
 if [ -n "$RELEASE_VER" ]; then
   banner "Untar build from appletv"
-  echo "RAMYA untaring value of APPLETV_BASICEGL_ROOT = "$APPLETV_BASICEGL_ROOT
-  tar -C $APPLETV_BASICEGL_ROOT -xvf $APPLETV_ROOT/basic-egl.tar
-  
+  echo "RAMYA untaring to dest dir APPLETV_BASICEGL_ROOT = "$APPLETV_BASICEGL_ROOT
+  tar -C $APPLETV_BASICEGL_ROOT -xvf $APPLETV_BASICEGL_ROOT/basic-egl.tar --exclude='.*DS_Store'
+
   banner "Building installable image"
   # build_install_img sets $FINAL_IMG_FILE
   build_install_img $RELEASE_VER $APPLETV_INSTALL_IMG_DIR
@@ -212,7 +212,7 @@ $FINAL_IMG_FILE"
 else
   banner "Untar build from appletv"
   echo "RAMYA untaring value of APPLETV_BASICEGL_ROOT = "$APPLETV_BASICEGL_ROOT
-  tar -C $APPLETV_BASICEGL_ROOT -xvf $APPLETV_ROOT/basic-egl.tar	
+  tar -C $APPLETV_BASICEGL_ROOT -xvf $APPLETV_ROOT/basic-egl.tar --exclude='.*DS_Store'
   banner "Building development tarball"
   build_dev_tarball $APPLETV_DEV_IMG_DIR
   banner "Development tarball:
