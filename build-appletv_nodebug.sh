@@ -164,8 +164,7 @@ parse_arguments $*
 # set up platform-independent environment variables
 APPLETV_BUILD_ROOT=$(realpath $(dirname $0))
 APPLETV_ROOT=`realpath $APPLETV_BUILD_ROOT/..`
-#CONJURE_EXTRAS_DIR=`realpath $CONJURE_BUILD_ROOT/extras`
-
+APPLETV_EXTRAS_DIR=`realpath $APPLETV_BUILD_ROOT/extras`
 mkdir -p $APPLETV_ROOT/appletv_basic_egl
 APPLETV_BASICEGL_ROOT=$APPLETV_ROOT/appletv_basic_egl
 mkdir -p $APPLETV_ROOT/appletv_out
